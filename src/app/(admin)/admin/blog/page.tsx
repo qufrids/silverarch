@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Pencil } from "lucide-react";
 import { getAllBlogPosts } from "@/actions/blog-posts";
@@ -5,9 +8,18 @@ import { DataTable } from "@/components/admin/data-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
+import type { BlogPost } from "@/types";
 
-export default async function BlogPage() {
-  const posts = await getAllBlogPosts();
+export default function BlogPage() {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllBlogPosts().then((data) => {
+      setPosts(data);
+      setLoading(false);
+    });
+  }, []);
 
   const columns = [
     {
@@ -48,6 +60,14 @@ export default async function BlogPage() {
       ),
     },
   ];
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-purple-500 border-t-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

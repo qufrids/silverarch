@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Pencil } from "lucide-react";
 import { getAllServices } from "@/actions/services";
@@ -6,8 +9,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { Service } from "@/types";
 
-export default async function ServicesPage() {
-  const services = await getAllServices();
+export default function ServicesPage() {
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllServices().then((data) => {
+      setServices(data);
+      setLoading(false);
+    });
+  }, []);
 
   const columns = [
     {
@@ -41,6 +52,14 @@ export default async function ServicesPage() {
       label: "Order",
     },
   ];
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-purple-500 border-t-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

@@ -1,12 +1,24 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Pencil } from "lucide-react";
 import { getAllProjects } from "@/actions/projects";
 import { DataTable } from "@/components/admin/data-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import type { Project } from "@/types";
 
-export default async function ProjectsPage() {
-  const projects = await getAllProjects();
+export default function ProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllProjects().then((data) => {
+      setProjects(data);
+      setLoading(false);
+    });
+  }, []);
 
   const columns = [
     {
@@ -40,6 +52,14 @@ export default async function ProjectsPage() {
       label: "Order",
     },
   ];
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-purple-500 border-t-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

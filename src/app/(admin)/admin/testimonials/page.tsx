@@ -1,12 +1,24 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Pencil, Star } from "lucide-react";
 import { getAllTestimonials } from "@/actions/testimonials";
 import { DataTable } from "@/components/admin/data-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import type { Testimonial } from "@/types";
 
-export default async function TestimonialsPage() {
-  const testimonials = await getAllTestimonials();
+export default function TestimonialsPage() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllTestimonials().then((data) => {
+      setTestimonials(data);
+      setLoading(false);
+    });
+  }, []);
 
   const columns = [
     {
@@ -66,6 +78,14 @@ export default async function TestimonialsPage() {
       label: "Order",
     },
   ];
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-purple-500 border-t-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
