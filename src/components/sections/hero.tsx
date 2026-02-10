@@ -35,7 +35,7 @@ export function Hero() {
           {/* Badge */}
           <motion.div
             variants={fadeInUp}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#1f1f25] bg-[#111116]/60 px-4 py-1.5 text-sm text-gray-400 backdrop-blur-sm"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
             Available for new projects
@@ -44,7 +44,7 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={fadeInUp}
-            className="max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="max-w-4xl text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
           >
             We Build Digital{" "}
             <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -56,7 +56,7 @@ export function Hero() {
           {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
-            className="mt-6 max-w-2xl text-lg text-gray-400 sm:text-xl"
+            className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
           >
             SilverArch is a full-service digital agency crafting elegant web
             solutions, stunning designs, and scalable platforms for ambitious

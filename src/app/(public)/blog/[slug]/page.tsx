@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Back link */}
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           All Posts
@@ -48,17 +48,17 @@ export default async function BlogPostPage({ params }: Props) {
           {post.category && (
             <Badge
               variant="secondary"
-              className="mb-4 border-[#1f1f25] bg-[#1a1a22] text-purple-400"
+              className="mb-4 border-border bg-secondary text-purple-400"
             >
               {post.category}
             </Badge>
           )}
 
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {post.title}
           </h1>
 
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-400">
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1.5">
               <User className="h-4 w-4" />
               {post.author_name}
@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Cover image placeholder */}
         {post.cover_image_url ? (
-          <div className="mb-12 aspect-video overflow-hidden rounded-xl border border-[#1f1f25]">
+          <div className="mb-12 aspect-video overflow-hidden rounded-xl border border-border">
             <img
               src={post.cover_image_url}
               alt={post.title}
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
             />
           </div>
         ) : (
-          <div className="mb-12 aspect-video overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116]">
+          <div className="mb-12 aspect-video overflow-hidden rounded-xl border border-border bg-card">
             <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-900/20 via-blue-900/15 to-cyan-900/10">
               <GradientText className="text-2xl font-bold">
                 {post.title}
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
         )}
 
         {/* Content */}
-        <article className="prose prose-invert max-w-none prose-headings:text-white prose-headings:font-bold prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-purple-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:text-purple-400 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-[#111116] prose-pre:border prose-pre:border-[#1f1f25] prose-li:text-gray-300 prose-blockquote:border-purple-500 prose-blockquote:text-gray-400">
+        <article className="prose dark:prose-invert max-w-none prose-headings:text-foreground prose-headings:font-bold prose-p:text-foreground/80 prose-p:leading-relaxed prose-a:text-purple-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-purple-400 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-card prose-pre:border prose-pre:border-border prose-li:text-foreground/80 prose-blockquote:border-purple-500 prose-blockquote:text-muted-foreground">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content}
           </ReactMarkdown>
@@ -106,11 +106,11 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Tags */}
         {post.tags && (post.tags as string[]).length > 0 && (
-          <div className="mt-12 flex flex-wrap gap-2 border-t border-[#1f1f25] pt-8">
+          <div className="mt-12 flex flex-wrap gap-2 border-t border-border pt-8">
             {(post.tags as string[]).map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[#1f1f25] bg-[#111116] px-3 py-1 text-sm text-gray-400"
+                className="rounded-full border border-border bg-card px-3 py-1 text-sm text-muted-foreground"
               >
                 {tag}
               </span>

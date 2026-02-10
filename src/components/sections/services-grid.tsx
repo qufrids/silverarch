@@ -95,10 +95,10 @@ export function ServicesGrid() {
                   <div className="mb-4 inline-flex rounded-lg bg-purple-500/10 p-3 text-purple-400">
                     {iconMap[service.icon]}
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-white transition-colors group-hover:text-purple-400">
+                  <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-purple-400">
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-400">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {service.description}
                   </p>
                 </GlowCard>

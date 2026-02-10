@@ -55,7 +55,7 @@ export function PortfolioPreview() {
           {projects.map((project) => (
             <motion.div key={project.slug} variants={staggerItem}>
               <Link href={`/portfolio/${project.slug}`} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card">
                   {/* Placeholder gradient since we don't have real images yet */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-blue-900/30 to-cyan-900/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -74,14 +74,14 @@ export function PortfolioPreview() {
                   <p className="text-xs font-medium uppercase tracking-wider text-purple-400">
                     {project.category}
                   </p>
-                  <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-purple-400">
+                  <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-purple-400">
                     {project.title}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-[#1f1f25] bg-[#111116] px-2.5 py-0.5 text-xs text-gray-400"
+                        className="rounded-full border border-border bg-card px-2.5 py-0.5 text-xs text-muted-foreground"
                       >
                         {tag}
                       </span>

@@ -4,7 +4,7 @@ import { GradientText } from "@/components/shared/gradient-text";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#1f1f25] bg-[#0b0b0f]">
+    <footer className="border-t border-border bg-background">
       {/* Gradient top line */}
       <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
@@ -15,7 +15,7 @@ export function Footer() {
             <GradientText className="text-xl font-bold">
               {siteConfig.name}
             </GradientText>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               {siteConfig.description}
             </p>
             <div className="flex gap-3">
@@ -25,7 +25,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg border border-[#1f1f25] bg-[#111116] p-2.5 text-gray-400 transition-colors hover:border-purple-500/30 hover:text-white"
+                  className="rounded-lg border border-border bg-card p-2.5 text-muted-foreground transition-colors hover:border-purple-500/30 hover:text-foreground"
                   aria-label={social.label}
                 >
                   <span className="sr-only">{social.label}</span>
@@ -43,7 +43,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               Services
             </h3>
             <ul className="space-y-3">
@@ -51,7 +51,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-white"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -62,7 +62,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               Company
             </h3>
             <ul className="space-y-3">
@@ -70,7 +70,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-white"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -81,10 +81,10 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               Contact
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-muted-foreground">
               <li>hello@silverarch.dev</li>
               <li>+1 (555) 123-4567</li>
               <li>San Francisco, CA</li>
@@ -93,16 +93,16 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#1f1f25] pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
             reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <Link href="#" className="hover:text-white">
+            <Link href="#" className="hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link href="#" className="hover:text-foreground">
               Terms of Service
             </Link>
           </div>

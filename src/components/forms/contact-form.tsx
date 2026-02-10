@@ -67,7 +67,7 @@ export function ContactForm({
             name="name"
             required
             placeholder="John Doe"
-            className="border-[#1f1f25] bg-[#0b0b0f]"
+            className="border-border bg-background"
           />
         </div>
         <div className="space-y-2">
@@ -78,7 +78,7 @@ export function ContactForm({
             type="email"
             required
             placeholder="john@example.com"
-            className="border-[#1f1f25] bg-[#0b0b0f]"
+            className="border-border bg-background"
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ export function ContactForm({
               id="phone"
               name="phone"
               placeholder="+1 (555) 123-4567"
-              className="border-[#1f1f25] bg-[#0b0b0f]"
+              className="border-border bg-background"
             />
           </div>
           <div className="space-y-2">
@@ -100,7 +100,7 @@ export function ContactForm({
               id="company"
               name="company"
               placeholder="Acme Inc."
-              className="border-[#1f1f25] bg-[#0b0b0f]"
+              className="border-border bg-background"
             />
           </div>
         </div>
@@ -112,7 +112,7 @@ export function ContactForm({
           <select
             id="service_interest"
             name="service_interest"
-            className="flex h-10 w-full rounded-md border border-[#1f1f25] bg-[#0b0b0f] px-3 py-2 text-sm text-white"
+            className="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground"
           >
             <option value="">Select a service</option>
             <option value="Web Development">Web Development</option>
@@ -134,7 +134,7 @@ export function ContactForm({
           required
           rows={compact ? 3 : 5}
           placeholder="Tell us about your project..."
-          className="border-[#1f1f25] bg-[#0b0b0f]"
+          className="border-border bg-background"
         />
       </div>
 

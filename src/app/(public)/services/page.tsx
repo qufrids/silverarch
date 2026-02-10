@@ -55,10 +55,10 @@ export default async function ServicesPage() {
                     <Globe className="h-6 w-6" />
                   )}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-white transition-colors group-hover:text-purple-400">
+                <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-purple-400">
                   {service.title}
                 </h3>
-                <p className="mb-4 text-sm leading-relaxed text-gray-400">
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {service.short_description}
                 </p>
                 {service.features && (

@@ -26,7 +26,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     <Sheet open={open} onOpenChange={onClose}>
       <SheetContent
         side="right"
-        className="w-full border-[#1f1f25] bg-[#0b0b0f] sm:w-80"
+        className="w-full border-border bg-background sm:w-80"
       >
         <SheetHeader className="text-left">
           <SheetTitle>
@@ -45,8 +45,8 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               className={cn(
                 "rounded-lg px-4 py-3 text-base font-medium transition-colors",
                 pathname === item.href
-                  ? "bg-[#111116] text-white"
-                  : "text-gray-400 hover:bg-[#111116] hover:text-white"
+                  ? "bg-card text-foreground"
+                  : "text-muted-foreground hover:bg-card hover:text-foreground"
               )}
             >
               {item.label}

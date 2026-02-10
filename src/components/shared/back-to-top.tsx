@@ -11,7 +11,7 @@ export function BackToTop() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={cn(
-        "fixed bottom-6 right-6 z-50 rounded-full border border-[#1f1f25] bg-[#111116] p-3 text-gray-400 shadow-lg transition-all hover:border-purple-500/30 hover:text-white",
+        "fixed bottom-6 right-6 z-50 rounded-full border border-border bg-card p-3 text-muted-foreground shadow-lg transition-all hover:border-purple-500/30 hover:text-foreground",
         isScrolled
           ? "translate-y-0 opacity-100"
           : "translate-y-4 opacity-0 pointer-events-none"

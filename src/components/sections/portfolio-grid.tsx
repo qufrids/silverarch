@@ -35,7 +35,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
               "rounded-full px-4 py-2 text-sm font-medium transition-colors",
               activeCategory === cat
                 ? "bg-purple-600 text-white"
-                : "border border-[#1f1f25] bg-[#111116] text-gray-400 hover:text-white"
+                : "border border-border bg-card text-muted-foreground hover:text-foreground"
             )}
           >
             {cat}
@@ -59,7 +59,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
                 href={`/portfolio/${project.slug}`}
                 className="group block"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-blue-900/30 to-cyan-900/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-xl font-bold text-white/10">
@@ -85,17 +85,17 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
                   <p className="text-xs font-medium uppercase tracking-wider text-purple-400">
                     {project.category}
                   </p>
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-muted-foreground">
                     {project.short_description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {(project.tech_stack as string[]).slice(0, 4).map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-[#1f1f25] bg-[#111116] px-2.5 py-0.5 text-xs text-gray-400"
+                        className="rounded-full border border-border bg-card px-2.5 py-0.5 text-xs text-muted-foreground"
                       >
                         {tag}
                       </span>

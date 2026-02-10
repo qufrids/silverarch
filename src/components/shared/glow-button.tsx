@@ -31,7 +31,7 @@ export function GlowButton({
     primary:
       "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]",
     secondary:
-      "border border-[#1f1f25] bg-[#111116] text-white hover:border-purple-500/30 hover:bg-[#161620] hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]",
+      "border border-border bg-card text-foreground hover:border-purple-500/30 hover:bg-secondary hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]",
   };
 
   const sizes = {

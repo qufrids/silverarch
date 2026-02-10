@@ -27,7 +27,7 @@ export function GlowCard({ children, className }: GlowCardProps) {
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
       className={cn(
-        "relative overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116] p-6 transition-colors hover:border-[#2a2a35]",
+        "relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-border/80",
         className
       )}
     >

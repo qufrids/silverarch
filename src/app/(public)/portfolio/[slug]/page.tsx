@@ -40,7 +40,7 @@ export default async function CaseStudyPage({ params }: Props) {
         {/* Back link */}
         <Link
           href="/portfolio"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           All Projects
@@ -55,16 +55,16 @@ export default async function CaseStudyPage({ params }: Props) {
             {project.client_name && (
               <>
                 <span className="text-gray-600">&bull;</span>
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-muted-foreground">
                   {project.client_name}
                 </span>
               </>
             )}
           </div>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             {project.title}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-400">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             {project.short_description}
           </p>
 
@@ -72,7 +72,7 @@ export default async function CaseStudyPage({ params }: Props) {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-[#1f1f25] bg-[#111116] px-3 py-1 text-sm text-gray-400"
+                className="rounded-full border border-border bg-card px-3 py-1 text-sm text-muted-foreground"
               >
                 {tech}
               </span>
@@ -90,7 +90,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
 
         {/* Project image placeholder */}
-        <div className="mb-16 aspect-video overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116]">
+        <div className="mb-16 aspect-video overflow-hidden rounded-xl border border-border bg-card">
           <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-900/30 via-blue-900/20 to-cyan-900/10">
             <span className="text-3xl font-bold text-white/10">
               {project.title}
@@ -103,10 +103,10 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="mb-16 grid gap-6 sm:grid-cols-3">
             {results.map((result) => (
               <GlowCard key={result.metric} className="text-center">
-                <div className="text-3xl font-bold text-white">
+                <div className="text-3xl font-bold text-foreground">
                   {result.value}
                 </div>
-                <p className="mt-1 text-sm text-gray-400">{result.metric}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{result.metric}</p>
               </GlowCard>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default async function CaseStudyPage({ params }: Props) {
         {/* Content */}
         {project.long_description && (
           <div className="mx-auto max-w-3xl">
-            <div className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-li:text-gray-300">
+            <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground/80 prose-strong:text-foreground prose-li:text-foreground/80">
               <ReactMarkdown>{project.long_description}</ReactMarkdown>
             </div>
           </div>

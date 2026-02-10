@@ -45,7 +45,7 @@ export function Testimonials() {
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, i) => (
             <ScrollReveal key={testimonial.name} delay={i * 0.1}>
-              <div className="h-full rounded-xl border border-[#1f1f25] bg-[#111116] p-6">
+              <div className="h-full rounded-xl border border-border bg-card p-6">
                 {/* Stars */}
                 <div className="mb-4 flex gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, j) => (
@@ -57,7 +57,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <p className="mb-6 text-sm leading-relaxed text-gray-300">
+                <p className="mb-6 text-sm leading-relaxed text-foreground/80">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
@@ -69,10 +69,10 @@ export function Testimonials() {
                     </span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-foreground">
                       {testimonial.name}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-muted-foreground">
                       {testimonial.title}
                     </p>
                   </div>

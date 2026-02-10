@@ -29,11 +29,11 @@ export function SectionHeading({
           {label}
         </GradientText>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-gray-400 text-balance">{description}</p>
+        <p className="text-lg text-muted-foreground text-balance">{description}</p>
       )}
     </div>
   );

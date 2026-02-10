@@ -77,10 +77,10 @@ export function PricingPreview() {
               key={pkg.name}
               variants={staggerItem}
               className={cn(
-                "relative rounded-xl border bg-[#111116] p-8",
+                "relative rounded-xl border bg-card p-8",
                 pkg.popular
                   ? "border-purple-500/30 shadow-[0_0_40px_rgba(139,92,246,0.1)]"
-                  : "border-[#1f1f25]"
+                  : "border-border"
               )}
             >
               {pkg.popular && (
@@ -90,20 +90,20 @@ export function PricingPreview() {
               )}
 
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground">
                   {pkg.name}
                 </h3>
-                <p className="mt-1 text-sm text-gray-400">
+                <p className="mt-1 text-sm text-muted-foreground">
                   {pkg.description}
                 </p>
               </div>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">
+                <span className="text-4xl font-bold text-foreground">
                   {pkg.price}
                 </span>
                 {pkg.price !== "Custom" && (
-                  <span className="text-sm text-gray-400"> / project</span>
+                  <span className="text-sm text-muted-foreground"> / project</span>
                 )}
               </div>
 
@@ -118,7 +118,7 @@ export function PricingPreview() {
                     <span
                       className={cn(
                         "text-sm",
-                        feature.included ? "text-gray-300" : "text-gray-600"
+                        feature.included ? "text-foreground/80" : "text-gray-600"
                       )}
                     >
                       {feature.text}

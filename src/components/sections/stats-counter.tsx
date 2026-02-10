@@ -7,7 +7,7 @@ import { stats } from "@/lib/constants";
 
 export function StatsCounter() {
   return (
-    <section className="border-y border-[#1f1f25] bg-[#0e0e13] py-16">
+    <section className="border-y border-border bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerContainer}
@@ -22,10 +22,10 @@ export function StatsCounter() {
               variants={staggerItem}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-white md:text-5xl">
+              <div className="text-4xl font-bold text-foreground md:text-5xl">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="mt-2 text-sm text-gray-400">{stat.label}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>

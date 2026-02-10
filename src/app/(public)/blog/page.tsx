@@ -42,7 +42,7 @@ export default async function BlogPage() {
               <Link key={post.id} href={`/blog/${post.slug}`}>
                 <GlowCard className="group h-full cursor-pointer">
                   {/* Cover image placeholder */}
-                  <div className="mb-4 aspect-video overflow-hidden rounded-lg border border-[#1f1f25] bg-[#0b0b0f]">
+                  <div className="mb-4 aspect-video overflow-hidden rounded-lg border border-border bg-background">
                     <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-900/20 via-blue-900/15 to-cyan-900/10">
                       <span className="text-sm font-bold text-white/10">
                         {post.title}
@@ -53,16 +53,16 @@ export default async function BlogPage() {
                   {post.category && (
                     <Badge
                       variant="secondary"
-                      className="mb-3 border-[#1f1f25] bg-[#1a1a22] text-purple-400"
+                      className="mb-3 border-border bg-secondary text-purple-400"
                     >
                       {post.category}
                     </Badge>
                   )}
 
-                  <h3 className="mb-2 text-lg font-semibold text-white transition-colors group-hover:text-purple-400">
+                  <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-purple-400">
                     {post.title}
                   </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-gray-400">
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                     {post.excerpt}
                   </p>
 

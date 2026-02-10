@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Form */}
           <div className="lg:col-span-2">
-            <div className="rounded-xl border border-[#1f1f25] bg-[#111116] p-6 sm:p-8">
+            <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
               <ContactForm />
             </div>
           </div>
@@ -60,18 +60,18 @@ export default function ContactPage() {
                     {info.icon}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-400">
+                    <p className="text-sm font-medium text-muted-foreground">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-white hover:text-purple-400"
+                        className="text-foreground hover:text-purple-400"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-white">{info.value}</p>
+                      <p className="text-foreground">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -79,8 +79,8 @@ export default function ContactPage() {
             ))}
 
             {/* Map placeholder */}
-            <div className="overflow-hidden rounded-xl border border-[#1f1f25]">
-              <div className="flex aspect-square items-center justify-center bg-[#111116]">
+            <div className="overflow-hidden rounded-xl border border-border">
+              <div className="flex aspect-square items-center justify-center bg-card">
                 <div className="text-center">
                   <MapPin className="mx-auto h-8 w-8 text-gray-600" />
                   <p className="mt-2 text-sm text-gray-500">

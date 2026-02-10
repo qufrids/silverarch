@@ -8,8 +8,8 @@ export default function NotFound() {
       <GradientText as="h1" className="text-8xl font-bold">
         404
       </GradientText>
-      <h2 className="text-2xl font-semibold text-white">Page Not Found</h2>
-      <p className="max-w-md text-center text-gray-400">
+      <h2 className="text-2xl font-semibold text-foreground">Page Not Found</h2>
+      <p className="max-w-md text-center text-muted-foreground">
         The page you&apos;re looking for doesn&apos;t exist or has been moved.
       </p>
       <GlowButton href="/" size="lg">

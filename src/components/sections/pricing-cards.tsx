@@ -22,7 +22,7 @@ export function PricingCards({ packages }: PricingCardsProps) {
         <span
           className={cn(
             "text-sm font-medium",
-            !yearly ? "text-white" : "text-gray-500"
+            !yearly ? "text-foreground" : "text-gray-500"
           )}
         >
           Monthly
@@ -33,7 +33,7 @@ export function PricingCards({ packages }: PricingCardsProps) {
             "relative h-7 w-12 rounded-full border transition-colors",
             yearly
               ? "border-purple-500 bg-purple-600"
-              : "border-[#1f1f25] bg-[#111116]"
+              : "border-border bg-card"
           )}
         >
           <div
@@ -46,7 +46,7 @@ export function PricingCards({ packages }: PricingCardsProps) {
         <span
           className={cn(
             "text-sm font-medium",
-            yearly ? "text-white" : "text-gray-500"
+            yearly ? "text-foreground" : "text-gray-500"
           )}
         >
           Yearly{" "}
@@ -72,8 +72,8 @@ export function PricingCards({ packages }: PricingCardsProps) {
               className={cn(
                 "relative rounded-xl border p-8",
                 pkg.is_popular
-                  ? "border-purple-500/30 bg-[#111116] shadow-[0_0_40px_rgba(139,92,246,0.1)]"
-                  : "border-[#1f1f25] bg-[#111116]"
+                  ? "border-purple-500/30 bg-card shadow-[0_0_40px_rgba(139,92,246,0.1)]"
+                  : "border-border bg-card"
               )}
             >
               {pkg.is_popular && (
@@ -83,10 +83,10 @@ export function PricingCards({ packages }: PricingCardsProps) {
               )}
 
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground">
                   {pkg.name}
                 </h3>
-                <p className="mt-1 text-sm text-gray-400">
+                <p className="mt-1 text-sm text-muted-foreground">
                   {pkg.description}
                 </p>
               </div>
@@ -94,16 +94,16 @@ export function PricingCards({ packages }: PricingCardsProps) {
               <div className="mb-6">
                 {price ? (
                   <>
-                    <span className="text-4xl font-bold text-white">
+                    <span className="text-4xl font-bold text-foreground">
                       {formatPrice(price)}
                     </span>
-                    <span className="text-sm text-gray-400">
+                    <span className="text-sm text-muted-foreground">
                       {" "}
                       / {yearly ? "year" : "project"}
                     </span>
                   </>
                 ) : (
-                  <span className="text-4xl font-bold text-white">Custom</span>
+                  <span className="text-4xl font-bold text-foreground">Custom</span>
                 )}
               </div>
 
@@ -118,7 +118,7 @@ export function PricingCards({ packages }: PricingCardsProps) {
                     <span
                       className={cn(
                         "text-sm",
-                        feature.included ? "text-gray-300" : "text-gray-600"
+                        feature.included ? "text-foreground/80" : "text-gray-600"
                       )}
                     >
                       {feature.text}

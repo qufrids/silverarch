@@ -57,10 +57,10 @@ export default function AboutPage() {
           <GradientText className="text-sm font-semibold uppercase tracking-widest">
             About Us
           </GradientText>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Building the Future of Digital
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             SilverArch was founded with a simple mission: to help ambitious
             brands build exceptional digital experiences. We combine technical
             excellence with creative vision to deliver solutions that truly
@@ -71,8 +71,8 @@ export default function AboutPage() {
         {/* Story */}
         <div className="mb-20 grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-white">Our Story</h2>
-            <div className="mt-6 space-y-4 text-gray-400">
+            <h2 className="text-3xl font-bold text-foreground">Our Story</h2>
+            <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
                 What started as a small team of passionate developers and
                 designers has grown into a full-service digital agency trusted by
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="aspect-square overflow-hidden rounded-xl border border-[#1f1f25] bg-[#111116]">
+          <div className="aspect-square overflow-hidden rounded-xl border border-border bg-card">
             <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-900/30 via-blue-900/20 to-cyan-900/10">
               <span className="text-4xl font-bold text-white/5">
                 SilverArch
@@ -112,10 +112,10 @@ export default function AboutPage() {
                 <div className="mb-4 inline-flex rounded-lg bg-purple-500/10 p-3 text-purple-400">
                   {value.icon}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-white">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
                   {value.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-400">
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {value.description}
                 </p>
               </GlowCard>
@@ -134,17 +134,17 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="rounded-xl border border-[#1f1f25] bg-[#111116] p-6 text-center"
+                className="rounded-xl border border-border bg-card p-6 text-center"
               >
                 <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600">
                   <span className="text-xl font-bold text-white">
                     {member.initials}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground">
                   {member.name}
                 </h3>
-                <p className="text-sm text-gray-400">{member.role}</p>
+                <p className="text-sm text-muted-foreground">{member.role}</p>
               </div>
             ))}
           </div>

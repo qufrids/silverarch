@@ -34,7 +34,7 @@ export function ProcessSteps() {
           className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
         >
           {/* Connecting line (desktop only) */}
-          <div className="absolute left-0 right-0 top-16 hidden h-px bg-gradient-to-r from-transparent via-[#1f1f25] to-transparent lg:block" />
+          <div className="absolute left-0 right-0 top-16 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block" />
 
           {processSteps.map((step) => (
             <motion.div
@@ -51,14 +51,14 @@ export function ProcessSteps() {
               </div>
 
               {/* Icon */}
-              <div className="mb-4 inline-flex rounded-lg bg-[#111116] p-3 text-purple-400 ring-1 ring-[#1f1f25]">
+              <div className="mb-4 inline-flex rounded-lg bg-card p-3 text-purple-400 ring-1 ring-border">
                 {iconMap[step.icon]}
               </div>
 
-              <h3 className="mb-2 text-lg font-semibold text-white">
+              <h3 className="mb-2 text-lg font-semibold text-foreground">
                 {step.title}
               </h3>
-              <p className="text-sm leading-relaxed text-gray-400">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
             </motion.div>
