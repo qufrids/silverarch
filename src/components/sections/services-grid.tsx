@@ -6,7 +6,6 @@ import {
   ShoppingCart,
   TrendingUp,
   Smartphone,
-  Video,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/animations";
@@ -14,6 +13,7 @@ import { GlowCard } from "@/components/shared/glow-card";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import Link from "next/link";
+import { staticServices } from "@/lib/services-data";
 
 const iconMap: Record<string, React.ReactNode> = {
   Globe: <Globe className="h-6 w-6" />,
@@ -21,53 +21,7 @@ const iconMap: Record<string, React.ReactNode> = {
   ShoppingCart: <ShoppingCart className="h-6 w-6" />,
   TrendingUp: <TrendingUp className="h-6 w-6" />,
   Smartphone: <Smartphone className="h-6 w-6" />,
-  Video: <Video className="h-6 w-6" />,
 };
-
-const services = [
-  {
-    title: "Web Development",
-    description:
-      "Custom web applications built with modern frameworks and best practices.",
-    icon: "Globe",
-    slug: "web-development",
-  },
-  {
-    title: "UI/UX Design",
-    description:
-      "Beautiful, intuitive interfaces designed to delight users and drive conversions.",
-    icon: "Palette",
-    slug: "ui-ux-design",
-  },
-  {
-    title: "E-Commerce",
-    description:
-      "Scalable online stores that convert visitors into customers.",
-    icon: "ShoppingCart",
-    slug: "e-commerce",
-  },
-  {
-    title: "Digital Strategy",
-    description:
-      "Data-driven strategies to grow your digital presence and reach your goals.",
-    icon: "TrendingUp",
-    slug: "digital-strategy",
-  },
-  {
-    title: "Mobile Apps",
-    description:
-      "Native and cross-platform mobile applications for iOS and Android.",
-    icon: "Smartphone",
-    slug: "mobile-apps",
-  },
-  {
-    title: "Video & Animation",
-    description:
-      "Engaging motion graphics and video content that tells your story.",
-    icon: "Video",
-    slug: "video-animation",
-  },
-];
 
 export function ServicesGrid() {
   return (
@@ -88,18 +42,18 @@ export function ServicesGrid() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {services.map((service) => (
+          {staticServices.map((service) => (
             <motion.div key={service.slug} variants={staggerItem}>
               <Link href={`/services/${service.slug}`}>
                 <GlowCard className="group h-full cursor-pointer">
                   <div className="mb-4 inline-flex rounded-lg bg-purple-500/10 p-3 text-purple-400">
-                    {iconMap[service.icon]}
+                    {iconMap[service.icon] ?? <Globe className="h-6 w-6" />}
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-purple-400">
                     {service.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
+                    {service.short_description}
                   </p>
                 </GlowCard>
               </Link>
