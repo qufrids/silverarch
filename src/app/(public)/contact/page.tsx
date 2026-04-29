@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Globe, MessageSquare } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { GlowCard } from "@/components/shared/glow-card";
 import { ContactForm } from "@/components/forms/contact-form";
@@ -15,21 +15,24 @@ export const metadata: Metadata = createPageMetadata({
 const contactInfo = [
   {
     icon: <Mail className="h-5 w-5" />,
-    label: "Email",
+    label: "Email Us",
     value: "hello@silverarch.dev",
     href: "mailto:hello@silverarch.dev",
+    description: "We aim to respond within 24 hours.",
   },
   {
-    icon: <Phone className="h-5 w-5" />,
-    label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-  },
-  {
-    icon: <MapPin className="h-5 w-5" />,
-    label: "Office",
-    value: "San Francisco, CA",
+    icon: <Globe className="h-5 w-5" />,
+    label: "We Work Remotely",
+    value: "Remote & Worldwide",
     href: null,
+    description: "Serving clients across the globe.",
+  },
+  {
+    icon: <MessageSquare className="h-5 w-5" />,
+    label: "Response Time",
+    value: "Within 24 Hours",
+    href: null,
+    description: "Monday to Friday, 9am – 6pm GMT.",
   },
 ];
 
@@ -40,7 +43,7 @@ export default function ContactPage() {
         <SectionHeading
           label="Contact Us"
           title="Let's Build Something Together"
-          description="Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you within 24 hours."
+          description="Have a project in mind? Fill out the form below and we'll get back to you within 24 hours with a tailored response."
         />
 
         <div className="grid gap-12 lg:grid-cols-3">
@@ -66,28 +69,40 @@ export default function ContactPage() {
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-foreground hover:text-purple-400"
+                        className="font-medium text-foreground hover:text-purple-400"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-foreground">{info.value}</p>
+                      <p className="font-medium text-foreground">{info.value}</p>
                     )}
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {info.description}
+                    </p>
                   </div>
                 </div>
               </GlowCard>
             ))}
 
-            {/* Map placeholder */}
-            <div className="overflow-hidden rounded-xl border border-border">
-              <div className="flex aspect-square items-center justify-center bg-card">
-                <div className="text-center">
-                  <MapPin className="mx-auto h-8 w-8 text-gray-600" />
-                  <p className="mt-2 text-sm text-gray-500">
-                    San Francisco, CA
-                  </p>
-                </div>
-              </div>
+            {/* Trust signals */}
+            <div className="rounded-xl border border-border bg-card p-5">
+              <p className="mb-3 text-sm font-semibold text-foreground">
+                Why work with us?
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Free initial consultation",
+                  "Clear, fixed-price proposals",
+                  "Dedicated project manager",
+                  "Transparent progress updates",
+                  "Post-launch support included",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

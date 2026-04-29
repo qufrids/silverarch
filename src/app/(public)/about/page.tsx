@@ -41,11 +41,11 @@ const values = [
   },
 ];
 
-const team = [
-  { name: "Alex Morgan", role: "Founder & CEO", initials: "AM" },
-  { name: "Jordan Lee", role: "Lead Developer", initials: "JL" },
-  { name: "Sam Rivera", role: "Design Director", initials: "SR" },
-  { name: "Taylor Kim", role: "Strategy Lead", initials: "TK" },
+const disciplines = [
+  { title: "Engineering", description: "Full-stack web and mobile development with modern, scalable frameworks." },
+  { title: "Design", description: "User-centred UI/UX that converts visitors and delights users." },
+  { title: "Strategy", description: "Data-driven digital strategy aligned to your business objectives." },
+  { title: "Growth", description: "SEO, performance optimisation, and ongoing support post-launch." },
 ];
 
 export default function AboutPage() {
@@ -123,28 +123,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Team */}
+        {/* Disciplines */}
         <div className="mb-20">
           <SectionHeading
-            label="Our Team"
-            title="The People Behind SilverArch"
-            description="A talented team of designers, developers, and strategists dedicated to your success."
+            label="What We Do"
+            title="A Full-Service Team"
+            description="Every engagement is staffed with senior specialists across all the disciplines your project needs."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => (
+            {disciplines.map((d) => (
               <div
-                key={member.name}
-                className="rounded-xl border border-border bg-card p-6 text-center"
+                key={d.title}
+                className="rounded-xl border border-border bg-card p-6"
               >
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600">
-                  <span className="text-xl font-bold text-white">
-                    {member.initials}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {member.name}
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  {d.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {d.description}
+                </p>
               </div>
             ))}
           </div>

@@ -34,16 +34,6 @@ export const footerLinks = {
   ],
 };
 
-export const socialLinks = [
-  { label: "Twitter", href: "https://twitter.com/silverarch", icon: "Twitter" },
-  { label: "GitHub", href: "https://github.com/silverarch", icon: "Github" },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/company/silverarch",
-    icon: "Linkedin",
-  },
-] as const;
-
 export const processSteps = [
   {
     step: 1,

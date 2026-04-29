@@ -3,6 +3,15 @@ import { Check, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getServiceBySlug, getServices } from "@/actions/services";
+
+export async function generateStaticParams() {
+  try {
+    const services = await getServices();
+    return services.map((s) => ({ slug: s.slug }));
+  } catch {
+    return [];
+  }
+}
 import { GlowButton } from "@/components/shared/glow-button";
 import { GradientText } from "@/components/shared/gradient-text";
 import { SectionHeading } from "@/components/shared/section-heading";

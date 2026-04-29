@@ -99,7 +99,7 @@ export function PricingCards({ packages }: PricingCardsProps) {
                     </span>
                     <span className="text-sm text-muted-foreground">
                       {" "}
-                      / {yearly ? "year" : "project"}
+                      / {yearly ? "year" : "month"}
                     </span>
                   </>
                 ) : (

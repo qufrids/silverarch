@@ -3,7 +3,16 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getBlogPostBySlug } from "@/actions/blog-posts";
+import { getBlogPostBySlug, getBlogPosts } from "@/actions/blog-posts";
+
+export async function generateStaticParams() {
+  try {
+    const posts = await getBlogPosts();
+    return posts.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
 import { Badge } from "@/components/ui/badge";
 import { GradientText } from "@/components/shared/gradient-text";
 import { formatDate } from "@/lib/utils";

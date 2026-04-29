@@ -2,7 +2,16 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { getProjectBySlug } from "@/actions/projects";
+import { getProjectBySlug, getProjects } from "@/actions/projects";
+
+export async function generateStaticParams() {
+  try {
+    const projects = await getProjects();
+    return projects.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
 import { GlowButton } from "@/components/shared/glow-button";
 import { GradientText } from "@/components/shared/gradient-text";
 import { GlowCard } from "@/components/shared/glow-card";
